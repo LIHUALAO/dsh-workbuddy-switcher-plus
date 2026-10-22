@@ -1,0 +1,67 @@
+{
+  "name": "dsh-workbuddy-switcher-plus",
+  "displayName": "WorkBuddy 账号切换 Plus",
+  "description": "在 DeepSeek Harness 里管理多个 WorkBuddy 账号并随时切换，按剩余积分智能选号，账号额度用尽或被上游限制时自动换号重试。",
+  "version": "0.3.0",
+  "author": "YG",
+  "contributors": [
+    "guoding (original dsh-workbuddy-switcher)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LIHUALAO/dsh-workbuddy-switcher-plus.git"
+  },
+  "homepage": "https://github.com/LIHUALAO/dsh-workbuddy-switcher-plus#readme",
+  "bugs": {
+    "url": "https://github.com/LIHUALAO/dsh-workbuddy-switcher-plus/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek",
+    "workbuddy",
+    "account-switcher",
+    "multi-account"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "NOTES-FROM-THE-AUTHOR.md"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.5",
+    "dsh-workbuddy-connect": ">=0.7.8"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "dsh-workbuddy-connect": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  }
+}
